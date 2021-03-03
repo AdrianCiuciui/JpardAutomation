@@ -10,12 +10,21 @@ public class Exercitiul1 {
 
     public void print () {
         for (int i=this.value; i > 0  ; i--){
-            int j = i;
-            while (j>0) {
-                System.out.print("*");
-                j--;
+//            int j = i;
+//            while (j>0) {
+//                System.out.print("*");
+//                j--;
+//            }
+            for (int j = i; j > 0; j--) {
+                if (j == 1) {
+                    System.out.print("*");
+                }
+                else {
+                    System.out.print("* ");
+                }
             }
             System.out.println();
         }
+
     }
 }

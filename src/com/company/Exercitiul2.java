@@ -13,6 +13,9 @@ public class Exercitiul2 {
         this.numberArray = new int[numberInput];
     }
 
+    public Exercitiul2() {
+    }
+
     public void inputArray () {
         Scanner scanner = new Scanner(System.in);
         int i = this.numberInput;
@@ -26,9 +29,30 @@ public class Exercitiul2 {
         }
     }
 
-    public void outputArray() {
-        System.out.println(Arrays.toString(this.numberArray));
+    public int[] inputAndReturnArray (int size) {
+        int[] completeArray = new int[size];
+        Scanner scanner = new Scanner(System.in);
+        int position = 1;
+        while (size > 0) {
+            try {
+                System.out.println("Input number " + position);
+                completeArray[position - 1] = scanner.nextInt();
+                position++;
+                scanner.nextLine();
+                size--;
+            }
+            catch (Exception e) {
+                System.out.println("Invalid input, please try again");
+                scanner.nextLine();
+            }
+        }
+            return completeArray;
     }
+
+    public boolean isNumberValid (int numberToTest, int arraySize) {
+        return numberToTest >= 0 && numberToTest <= arraySize;
+    }
+
 
     public void isOk() {
         int j = 0;
@@ -39,6 +63,21 @@ public class Exercitiul2 {
         else System.out.println("FALSE. Not enough positive numbers.");
     }
 
+    public boolean isOk2(int[] numbersArray, int positiveNumber) {
+//        boolean isArrayNumerical = true;
+//        for (int j : numbersArray) {
+//            if (!isNumeric(j)) return false;
+//        }
+        for (int j : numbersArray) {
+            if (j > 0) positiveNumber--;
+        }
+        return !(positiveNumber > 0);
+
+
+
+//        return isArrayNumerical;
+    }
+
     public int highestNumber () {
         int max = Integer.MIN_VALUE;
         for (int i = 0; i < numberInput; i++) {
@@ -46,5 +85,19 @@ public class Exercitiul2 {
         }
         return max;
     }
+
+    public int highestNumber (int[] numbersArray) {
+        int max = Integer.MIN_VALUE;
+        for (int i = 0; i < numbersArray.length; i++) {
+            if (numbersArray[i] > max) max = numbersArray[i];
+        }
+        return max;
+    }
+
+    public boolean isNumeric (int str) {
+        String strs = String.valueOf(str);
+        return strs.matches("-?\\d+(\\.\\d+)?");
+    }
+
 
 }
