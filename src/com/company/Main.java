@@ -127,6 +127,30 @@ public class Main {
         }
 
 
+// Exercitiul 6
+//	Array/Siruri: o functie care are parametru de intrare un sir si returneaza MIN
+        int[] array = {2, 3, 0, 100, 200, -33};
+        Exercitiul2 exercitiul6 = new Exercitiul2();
+        System.out.println("\nExercitiul #6 - minim din array.\nNumarul cel mai mic din array este: " + exercitiul6.minimumValue(array));
+
+//Exercitiul #7
+//	Siruri: o functie care are parametru de intrare un sir si returneaza SUMA
+
+        int[] array7 = {2, 3, 0, 100};
+        Exercitiul2 exercitiul7 = new Exercitiul2();
+        exercitiul7.calculateSum (array7);
+        System.out.println("\nExercitiul #7 - suma din array.\nSuma numerelor din array este: " + exercitiul7.calculateSum (array7));
+
+
+
+
+
+
+
+
+
+
+
 
 
 

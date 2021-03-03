@@ -99,5 +99,21 @@ public class Exercitiul2 {
         return strs.matches("-?\\d+(\\.\\d+)?");
     }
 
+    public int minimumValue (int[] array) {
+        int min = Integer.MAX_VALUE;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < min) min = array[i];
+        }
+        return min;
+    }
+
+    public int calculateSum (int[] array) {
+        int sum = 0;
+
+        for (int i = 0; i < array.length; i++) {
+            sum += array[i];
+        }
+        return sum;
+    }
 
 }
